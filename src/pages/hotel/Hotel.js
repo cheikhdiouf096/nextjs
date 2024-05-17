@@ -7,6 +7,9 @@ import img3 from "../../app/assets/img3.png";
 import img4 from "../../app/assets/img4.png";
 import img5 from "../../app/assets/img5.png";
 import img6 from "../../app/assets/img6.png";
+import img7 from "../../app/assets/img7.png";
+import img8 from "../../app/assets/img8.png";
+
 import styled from "styled-components";
 
 // import {
@@ -63,8 +66,20 @@ const Data = [
     imgSrc: img6,
     destTitle: "Hôtel Saly",
     location: "Mbour, Sénégal",
-    grade: "CULTURAL RELAX",
     fees: "20000 XOF par nuit",
+  },{
+    id: 7,
+    imgSrc: img7,
+    destTitle: "Palm Beach Resort & Spa",
+    location: "BP64, Saly 23000",
+    fees: "22.000 XOF par nuit",
+  },
+  {
+    id: 8,
+    imgSrc: img8,
+    destTitle: "Pullman Dakar Teranga",
+    location: "Place de l`Independance, 10 Rue PL 29, Dakar",
+    fees: "30000 XOF par nuit",
   },
 ];
 
@@ -75,7 +90,7 @@ export const HotelSection = styled.section`
 
 export const SecContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 
   @media screen and (min-width: 320px) {
@@ -85,10 +100,10 @@ export const SecContent = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
   @media screen and (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   @media screen and (min-width: 1280px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
