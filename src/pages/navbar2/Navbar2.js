@@ -30,7 +30,7 @@ import {
   HeaderButtonPlus,
   StyleSpanCreer,
   StyleIconCreer
-} from './Navbar2Style';
+} from './Navbar2Style.js';
 
 import ProfileAdmin from "../../app/assets/img2.png"
 

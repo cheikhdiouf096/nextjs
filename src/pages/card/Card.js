@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeOpen, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { faP } from '@fortawesome/free-solid-svg-icons/faP';
-import { BorderIcon, CardContainer, CardInfo, Content, IconRow, Number, Partie, StyledPrice } from './Card.Style';
+import { BorderIcon, CardContainer, CardInfo, Content, IconRow, Number, Partie, StyledPrice } from './Card.Style.js';
 
 const Data = [
   {

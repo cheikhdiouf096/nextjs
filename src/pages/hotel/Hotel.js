@@ -18,7 +18,7 @@ import {
   Address,
   DestTitle,
   Price,
-} from './HotelStyle';
+} from './HotelStyle.js';
 
 
 const Data = [
