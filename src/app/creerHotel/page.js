@@ -21,7 +21,7 @@ import {
   StyledSubmitCreer,
   FlexEnd,
   SpanAjouterPhoto
-} from "../creerHotel/CreerStyle";
+} from "../creerHotel/CreerStyle.js";
 import Link from "next/link";
 import Image from "next/image";
 
