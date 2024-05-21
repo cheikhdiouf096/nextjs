@@ -4,7 +4,7 @@ import Image from "next/image";
 import iconRed from "../assets/icon.png";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { StyledButton, StyledCheckboxContainer, StyledCheckboxInput, StyledCheckboxText, StyledContainer, StyledForgotPasswordLink, StyledForm, StyledFormContainer, StyledFormInput, StyledFormLabel, StyledIcon, StyledInfo, StyledInput, StyledLogoContainer, StyledSignupLink, StyledText, } from "../connexion/ConnexionStyle";
+import { Form, StyledButton, StyledCheckboxContainer, StyledCheckboxInput, StyledCheckboxText, StyledContainer, StyledFrm, StyledFrmInput, StyledFrmLabel, StyledIcon, StyledInfo, StyledInput, StyledLogoContainer, StyledSignupLien, StyledText, } from "../../styles/Connexion.Style";
 
 
 const Inscription = () => {
@@ -16,21 +16,21 @@ const Inscription = () => {
         </StyledIcon>
         <StyledText>Red Product</StyledText>
       </StyledLogoContainer>
-      <StyledFormContainer>
-        <StyledForm>
+      <Form>
+        <StyledFrm>
           <StyledInfo>Inscrivez-vous en tant qu'admin</StyledInfo>
-          <StyledFormInput>
-            <StyledFormLabel htmlFor="username">Prénom</StyledFormLabel>
+          <StyledFrmInput>
+            <StyledFrmLabel htmlFor="username">Prénom</StyledFrmLabel>
             <StyledInput id="username" type="text" />
-          </StyledFormInput>
-          <StyledFormInput>
-            <StyledFormLabel htmlFor="email">Email</StyledFormLabel>
+          </StyledFrmInput>
+          <StyledFrmInput>
+            <StyledFrmLabel htmlFor="email">Email</StyledFrmLabel>
             <StyledInput id="email" type="email" />
-          </StyledFormInput>
-          <StyledFormInput>
-            <StyledFormLabel htmlFor="password">Mot de passe</StyledFormLabel>
+          </StyledFrmInput>
+          <StyledFrmInput>
+            <StyledFrmLabel htmlFor="password">Mot de passe</StyledFrmLabel>
             <StyledInput id="password" type="password" />
-          </StyledFormInput>
+          </StyledFrmInput>
           <StyledCheckboxContainer>
             <StyledCheckboxInput id="checkbox" type="checkbox"/>
             <StyledCheckboxText>
@@ -38,11 +38,11 @@ const Inscription = () => {
             </StyledCheckboxText>
           </StyledCheckboxContainer>
           <StyledButton type="button">Inscription</StyledButton>
-        </StyledForm>
-      </StyledFormContainer>
-      <StyledSignupLink>
+        </StyledFrm>
+      </Form>
+      <StyledSignupLien>
         Vous avez déjà un compte? <Link href="/">Se connecter</Link>
-      </StyledSignupLink>
+      </StyledSignupLien>
     </StyledContainer>
   );
 };

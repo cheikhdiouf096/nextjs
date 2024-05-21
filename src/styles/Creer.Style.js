@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #171717; /* equivalent to bg-neutral-900 */
+  // background-color: #171717; /* equivalent to bg-neutral-900 */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ export const Title = styled.span`
   }
 `;
 
-export const Piod = styled.div`
+export const Form = styled.div`
   margin: 1rem 0;
 `;
 

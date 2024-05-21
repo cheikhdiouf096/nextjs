@@ -3,15 +3,11 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from '../../pages/sidebar/Sidebar';
 import Navbar from '../../pages/navbar/Navbar';
-import Card from '../../pages/card/Card';
+import Card from '@/pages/card/Card';
 
-
-
-
-
-export default function Dashboard() {
-       return (
-        <div className='tailwind'>
+const Dashboard = () => {
+    return (
+        <div>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col col-md col-lg-2">
@@ -24,8 +20,10 @@ export default function Dashboard() {
                 </div>
             </div>
         </div>
-  )
-}
+    );
+};
+
+export default Dashboard;
 
 
 

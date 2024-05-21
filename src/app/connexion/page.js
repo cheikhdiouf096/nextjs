@@ -4,7 +4,7 @@ import Link from "next/link";
 import iconRed from "../assets/icon.png";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { StyledCheckboxContainer, StyledCheckboxInput, StyledCheckboxText, StyledContainer, StyledForgotPasswordLink, StyledForm, StyledFormContainer, StyledFormInput, StyledFormLabel, StyledIcon, StyledInfo, StyledInput, StyledLogoContainer, StyledSignupLink, StyledSubmitButton, StyledText } from "./ConnexionStyle";
+import { StyledCheckboxContainer, StyledCheckboxInput, StyledCheckboxText, StyledContainer, StyledForgotPasswordLien, StyledFrm, Form, StyledFrmInput, StyledFrmLabel, StyledIcon, StyledInfo, StyledInput, StyledLogoContainer, StyledSignupLien, StyledSubmitButton, StyledText } from "../../styles/Connexion.Style";
 
 
 const Connexion = () => {
@@ -17,17 +17,17 @@ const Connexion = () => {
           </StyledIcon>
           <StyledText>Red Product</StyledText>
         </StyledLogoContainer>
-        <StyledFormContainer>
-          <StyledForm>
+        <Form>
+          <StyledFrm>
             <StyledInfo>Connectez-vous en tant qu'admin</StyledInfo>
-            <StyledFormInput>
-              <StyledFormLabel htmlFor="email">Email</StyledFormLabel>
+            <StyledFrmInput>
+              <StyledFrmLabel htmlFor="email">Email</StyledFrmLabel>
               <StyledInput id="email" type="email" />
-            </StyledFormInput>
-            <StyledFormInput>
-              <StyledFormLabel htmlFor="password">Mot de passe</StyledFormLabel>
+            </StyledFrmInput>
+            <StyledFrmInput>
+              <StyledFrmLabel htmlFor="password">Mot de passe</StyledFrmLabel>
               <StyledInput id="password" type="password" />
-            </StyledFormInput>
+            </StyledFrmInput>
             <StyledCheckboxContainer>
               <StyledCheckboxInput
                 type="checkbox"
@@ -40,17 +40,17 @@ const Connexion = () => {
             <Link href="/dashboard">
               <StyledSubmitButton type="submit">Se connecter</StyledSubmitButton>
             </Link>
-          </StyledForm>
-        </StyledFormContainer>
+          </StyledFrm>
+        </Form>
         <Link href="/forgotpwd">
-        <StyledForgotPasswordLink>
+        <StyledForgotPasswordLien>
             Mot de passe oublié?
-        </StyledForgotPasswordLink>
+        </StyledForgotPasswordLien>
         </Link>
-        <StyledSignupLink>
+        <StyledSignupLien>
           Vous n'avez pas de compte?{" "}
           <Link href="/inscription">Inscription</Link>
-        </StyledSignupLink>
+        </StyledSignupLien>
       </StyledContainer>
     </>
   );

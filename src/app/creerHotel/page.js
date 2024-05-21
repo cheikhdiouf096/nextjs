@@ -2,14 +2,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { StyledFormInput} from "../connexion/ConnexionStyle";
+import { StyledFrmInput } from "../../styles/Connexion.Style";
 import vector from "../assets/Vector.png"
 import {
   Container,
   Card,
   Title,
   Header,
-  Piod,
+  Form,
   Row,
   FrGr2oup,
   Label,
@@ -20,34 +20,37 @@ import {
   StyledFrInput,
   StyledSubmitCreer,
   FlexEnd,
-  SpanAjouterPhoto
-} from "../creerHotel/CreerStyle";
+  SpanAjouterPhoto,
+} from "../../styles/Creer.Style";
 import Link from "next/link";
 import Image from "next/image";
+import { ButtonModal } from "../../styles/Navbar2.Style";
 
-const CreerHotel = () => {
+const CreerHotel = ({ handleClose }) => {
   return (
     <Container>
       <Card>
         <Header>
-          <FontAwesomeIcon icon={faArrowLeft} />
+          <ButtonModal onClick={handleClose}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </ButtonModal>
           <Title>Créer un nouveau hôtel</Title>
         </Header>
-        <Piod>
+        <Form>
           <Row>
             <FrGr2oup>
               <StyledFrInput>
                 <Label htmlFor="hotel-name">Nom de l'hôtel</Label>
                 <Input id="hotel-name" type="text" placeholder="CAP Marniane" />
               </StyledFrInput>
-              <StyledFormInput>
+              <StyledFrInput>
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" type="email" placeholder="Email" />
-              </StyledFormInput>
-              <StyledFormInput>
+              </StyledFrInput>
+              <StyledFrInput>
                 <Label htmlFor="price">Prix par nuit</Label>
                 <Input id="price" type="number" placeholder="125.000 XOF" />
-              </StyledFormInput>
+              </StyledFrInput>
             </FrGr2oup>
             <FrGr2oup>
               <StyledFrInput>
@@ -68,20 +71,20 @@ const CreerHotel = () => {
               </StyledFrInput>
             </FrGr2oup>
           </Row>
-        </Piod>
+        </Form>
         <Footer>
           <Label htmlFor="file">Ajouter une photo</Label>
           <Dropzone htmlFor="dropzone-file">
-            <Image src={vector} alt="Vector"/>
+            <Image src={vector} alt="Vector" />
             <SpanAjouterPhoto>Ajouter une photo</SpanAjouterPhoto>
-            <Input id="dropzone-file" type="file" style={{display: "none"}} />
+            <Input id="dropzone-file" type="file" style={{ display: "none" }} />
           </Dropzone>
         </Footer>
-             <FlexEnd>
-             <Link href="/dashboard">
-              <StyledSubmitCreer type="submit">Se connecter</StyledSubmitCreer>
-            </Link>
-             </FlexEnd>
+        <FlexEnd>
+          <Link href="/dashboard" style={{ textDecoration: "none" }}>
+            <StyledSubmitCreer type="submit">Se connecter</StyledSubmitCreer>
+          </Link>
+        </FlexEnd>
       </Card>
     </Container>
   );

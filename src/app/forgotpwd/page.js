@@ -4,7 +4,7 @@ import iconRed from "../assets/icon.png";
 import Image from "next/image";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { StyledBackToLoginLink, StyledButton, StyledContainer,  StyledForm, StyledFormContainer, StyledFormInput, StyledFormLabel, StyledIcon, StyledInfo, StyledInput, StyledLogoContainer, StyledText, StyledTextInfo } from "../connexion/ConnexionStyle";
+import { Form, StyledBackToLoginLien, StyledButton, StyledContainer, StyledFrm, StyledFrmInput, StyledFrmLabel, StyledIcon, StyledInfo, StyledInput, StyledLogoContainer, StyledText, StyledTextInfo } from "../../styles/Connexion.Style";
 
 
 const ForgotPwd = () => {
@@ -17,24 +17,24 @@ const ForgotPwd = () => {
           </StyledIcon>
           <StyledText>Red Product</StyledText>
         </StyledLogoContainer>
-        <StyledFormContainer>
-          <StyledForm>
+        <Form>
+          <StyledFrm>
             <StyledInfo>Mot de passe oublié?</StyledInfo>
             <StyledTextInfo>
               Entrez votre adresse e-mail ci-dessous et nous vous envoyons des
               instructions sur la façon de modifier votre mot de passe.
             </StyledTextInfo>
-            <StyledFormInput>
-              <StyledFormLabel htmlFor="email" className="font-bold" style={{color: '#45484B'}}>Email</StyledFormLabel>
+            <StyledFrmInput>
+              <StyledFrmLabel htmlFor="email" className="font-bold" style={{color: '#45484B'}}>Email</StyledFrmLabel>
               <StyledInput id="email" type="email" />
-            </StyledFormInput>
+            </StyledFrmInput>
             <StyledButton type="button">Envoyez</StyledButton>
-          </StyledForm>
-        </StyledFormContainer>
-        <StyledBackToLoginLink>
+          </StyledFrm>
+        </Form>
+        <StyledBackToLoginLien>
           Revenir à la{" "}
           <Link href="/">connexion</Link>
-        </StyledBackToLoginLink>
+        </StyledBackToLoginLien>
       </StyledContainer>
     </>
   );
