@@ -1,44 +1,84 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeOpen, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { faP } from '@fortawesome/free-solid-svg-icons/faP';
 import { BorderIcon, CardContainer, CardInfo, Content, IconRow, Number, Partie, StyledPrice } from '../../styles/Card.Style';
+const Data = [
+  {
+    id: 1,
+    icon: <FontAwesomeIcon icon={faEnvelopeOpen} size='1x'/>,
+    number: 125,
+    partie: 'Formulaires',
+    text: 'Je ne sais pas quoi mettre',
+    background: "#A88ADD",
+  },
+  {
+    id: 2,
+    icon: <FontAwesomeIcon icon={faP} size='1x'/>,
+    number: 40,
+    partie: 'Messages',
+    text: 'Je ne sais pas quoi mettre',
+    background: "#0CC2AA",
 
-const iconMap = {
-  faEnvelopeOpen: faEnvelopeOpen,
-  faUserFriends: faUserFriends,
-  faP: faP
-};
+
+  },
+  {
+    id: 3,
+    icon: <FontAwesomeIcon icon={faUserFriends} size='1x'/>,
+    number: 600,
+    partie: 'Utilisateurs ',
+    text: 'Je ne sais pas quoi mettre',
+    background: "#FCC100",
+
+
+  },
+  {
+    id: 4,
+    icon: <FontAwesomeIcon icon={faEnvelopeOpen} size='1x'/>,
+    number: 25,
+    partie: 'E-mails',
+    text: 'Je ne sais pas quoi mettre',
+    background: "#F90000",
+  },
+  {
+    id: 5,
+    icon: <FontAwesomeIcon icon={faP} size='1x'/>,
+    number: 40,
+    partie: 'Hôtels',
+    text: 'Je ne sais pas quoi mettre',
+    background: "#9C27B0",
+
+
+  },
+  {
+    id: 6,
+    icon: <FontAwesomeIcon icon={faUserFriends} size='1x'/>,
+    number: 20,
+    partie: 'Entités ',
+    text: 'Je ne sais pas quoi mettre',
+    background: "#1565C0",
+  }
+];
+
 
 const Card = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/home')
-      .then(response => response.json())
-      .then(data => {
-        setData(data.Card);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }, []);
-
   return (
     <CardContainer>
       <Content>
-        {data.map(({ id, icon, number, partie, text, background }) => (
+        {Data.map(({ id, icon, number, partie, text, background }) => (
           <IconRow key={id} data-aos="fade-up">
-            <BorderIcon style={{ background }}>
-              <FontAwesomeIcon icon={iconMap[icon]} size='1x' />
+            <BorderIcon style={{background, color: 'white'}}>
+              {icon}
             </BorderIcon>
             <CardInfo>
               <StyledPrice>
                 <Number>{number}</Number>
-                <Partie>{partie}</Partie>
+                <Partie> {partie} </Partie>
               </StyledPrice>
-              <StyledPrice>{text}</StyledPrice>
+              <StyledPrice>
+                {text}
+              </StyledPrice>
             </CardInfo>
           </IconRow>
         ))}
@@ -47,4 +87,8 @@ const Card = () => {
   );
 }
 
+
 export default Card;
+
+
+

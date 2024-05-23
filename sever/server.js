@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require("cors");
 const app = express();
-const port = 8080;
+const port = 3030;
 
 
 app.use(cors());
@@ -67,6 +67,41 @@ app.get('/api/home', (req, res) => {
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
+ 
 
 
 
+
+
+
+const hotelRoute = require("./routes/hotel.route.js");
+
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+
+// routes
+app.use("/api/hotels", hotelRoute); 
+
+
+
+
+app.get("/", (req, res) => {
+  res.send("Hello from Node API Server Updated");
+});
+
+
+mongoose
+  .connect(  
+    "mongodb+srv://cheikh096:lqcdu5565@backenddb.nrurtot.mongodb.net/Node-API?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("Connected to database!");
+    app.listen(8080, () => {
+      console.log("Server is running on port 3000");
+    });
+  })
+  .catch(() => {
+    console.log("Connection failed!");
+  });
