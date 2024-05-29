@@ -47,7 +47,7 @@ export const StyledFrm = styled.form`
   padding: 1.5rem 1.5rem;
 `;
 
-export const StyledFrmInput = styled.form`
+export const StyledFrmInput = styled.div`
   margin-bottom: 0.75rem; 
 `;
 
@@ -159,3 +159,14 @@ export const StyledTextInfo = styled.div`
 color: #a1a2a3;
 margin-bottom: 2rem;
 `;
+
+export const ErrorMessage = styled.div`
+background-color: red;
+`;
+
+export const SuccessMessage = styled.div`
+color: white;
+font-weight: bold;
+background-color: green;
+`;
+

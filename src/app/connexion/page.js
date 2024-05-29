@@ -1,13 +1,82 @@
-"use client"
-import React from "react";
+'use client'
+
+
+import React, { useState } from "react";
 import Link from "next/link";
 import iconRed from "../assets/icon.png";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { StyledCheckboxContainer, StyledCheckboxInput, StyledCheckboxText, StyledContainer, StyledForgotPasswordLien, StyledFrm, Form, StyledFrmInput, StyledFrmLabel, StyledIcon, StyledInfo, StyledInput, StyledLogoContainer, StyledSignupLien, StyledSubmitButton, StyledText } from "../../styles/Connexion.Style";
+import { useRouter } from "next/navigation";
+import {
+  StyledCheckboxContainer,
+  StyledCheckboxInput,
+  StyledCheckboxText,
+  StyledContainer,
+  StyledForgotPasswordLien,
+  StyledFrm,
+  Form,
+  StyledFrmInput,
+  StyledFrmLabel,
+  StyledIcon,
+  StyledInfo,
+  StyledInput,
+  StyledLogoContainer,
+  StyledSignupLien,
+  StyledSubmitButton,
+  StyledText,
+  ErrorMessage
+} from "../../styles/Connexion.Style";
 
 
 const Connexion = () => {
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+
+  const resetMessage = () => {
+    setError("");
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+
+    const { email, password } = values;
+
+
+    try {
+      const response = await fetch("https://next-back.onrender.com/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+
+      if (!response.ok) {
+        throw new Error("Invalid credentials");
+      }
+
+
+      router.replace("/dashboard"); // Rediriger vers le tableau de bord après une connexion réussie
+    } catch (error) {
+      setError("Invalid credentials");
+      setTimeout(resetMessage, 5000);
+    }
+  };
+
+
   return (
     <>
       <StyledContainer>
@@ -18,16 +87,29 @@ const Connexion = () => {
           <StyledText>Red Product</StyledText>
         </StyledLogoContainer>
         <Form>
-          <StyledFrm>
+          <StyledFrm onSubmit={handleSubmit}>
             <StyledInfo>Connectez-vous en tant qu'admin</StyledInfo>
             <StyledFrmInput>
               <StyledFrmLabel htmlFor="email">Email</StyledFrmLabel>
-              <StyledInput id="email" type="email" />
+              <StyledInput
+                id="email"
+                name="email"
+                type="email"
+                value={values.email}
+                onChange={handleChange}
+              />
             </StyledFrmInput>
             <StyledFrmInput>
               <StyledFrmLabel htmlFor="password">Mot de passe</StyledFrmLabel>
-              <StyledInput id="password" type="password" />
+              <StyledInput
+                id="password"
+                name="password"
+                type="password"
+                value={values.password}
+                onChange={handleChange}
+              />
             </StyledFrmInput>
+            {error && <ErrorMessage>{error}</ErrorMessage>}
             <StyledCheckboxContainer>
               <StyledCheckboxInput
                 type="checkbox"
@@ -35,17 +117,13 @@ const Connexion = () => {
                 name="interest"
                 value="coding"
               />
-              <StyledCheckboxText>Garder-moi connecter</StyledCheckboxText>
+              <StyledCheckboxText>Garder-moi connecté</StyledCheckboxText>
             </StyledCheckboxContainer>
-            <Link href="/dashboard">
-              <StyledSubmitButton type="submit">Se connecter</StyledSubmitButton>
-            </Link>
+            <StyledSubmitButton type="submit">Se connecter</StyledSubmitButton>
           </StyledFrm>
         </Form>
         <Link href="/forgotpwd">
-        <StyledForgotPasswordLien>
-            Mot de passe oublié?
-        </StyledForgotPasswordLien>
+          <StyledForgotPasswordLien>Mot de passe oublié?</StyledForgotPasswordLien>
         </Link>
         <StyledSignupLien>
           Vous n'avez pas de compte?{" "}
@@ -56,4 +134,8 @@ const Connexion = () => {
   );
 };
 
+
 export default Connexion;
+
+
+

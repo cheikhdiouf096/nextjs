@@ -37,7 +37,7 @@ export const Title = styled.span`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   margin: 1rem 0;
 `;
 
@@ -123,7 +123,7 @@ export const StyledFrInput = styled.div`
   margin-bottom: 0.5rem;
 `;
 
-export const StyledSubmitCreer = styled.div`
+export const StyledSubmitCreer = styled.button`
 width: 100%;
 background: #45484B;
 color: #ffffff;
