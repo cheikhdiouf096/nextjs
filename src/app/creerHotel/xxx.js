@@ -43,7 +43,7 @@
 
 
 //         try {
-//             const res = await fetch("http://localhost:8080/api/hotels", {
+//             const res = await fetch(" http://localhost:8000  /api/hotels", {
 //                 method: "POST",
 //                 headers: {
 //                     "Content-type": "application/json",

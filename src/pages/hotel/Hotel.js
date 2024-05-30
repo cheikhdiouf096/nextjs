@@ -23,7 +23,7 @@ const Hotel = () => {
   const [data, setData] = useState([]);
 
 useEffect(() => {
-  fetch(' https://next-back.onrender.com/api/hotels')
+  fetch('   http://localhost:8000/api/hotels')
     .then(response => response.json())
     .then(data => {
       setData(data);
@@ -41,8 +41,8 @@ useEffect(() => {
           return (
             <SingleDestination key={id} data-aos="fade-up">
               <ImageDiv>
-                <Image src={(`/images/${imageUrl}`)} alt={hotelName} 
-                width={300} height={200}/>
+                {/* <Image src={(`/images/${imageUrl}`)} alt={hotelName} 
+                width={300} height={200}/> */}
               </ImageDiv>
               <CardInfo>
                 <Continent>
@@ -154,7 +154,7 @@ export default Hotel;
 
 //   const fetchData = async () => {
 //     try {
-//       const response = await axios.get(" http://localhost:8080/api/hotels");
+//       const response = await axios.get("  http://localhost:8000/api/hotels");
 //       setHotels(response.data);
 //       setNombre(response.data.length);
 //     } catch (error) {
@@ -183,7 +183,7 @@ export default Hotel;
 
 //   const handleDelete = async (id) => {
 //     try {
-//       await axios.delete(` http://localhost:8080/api/hotels/${id}`);
+//       await axios.delete(` http://localhost:8000/api/hotels/${id}`);
 //       setHotels(hotels.filter(hotel => hotel._id !== id));
 //     } catch (error) {
 //       setError('Erreur lors de la suppression de l\'hôtel.');
